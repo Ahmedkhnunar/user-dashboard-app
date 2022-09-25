@@ -23,7 +23,7 @@
           line-height: 40px;
         }
     </style>
-<link href="{{ asset('storage/css/main.css') }}" rel="stylesheet"></head>
+<link href="{{ asset('css/main.css') }}" rel="stylesheet"></head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header closed-sidebar">
         <div class="app-header header-shadow">
@@ -84,7 +84,7 @@
                                                     <div class="row">
                                                         <div class="col-md-2">
                                                             @if($user['avatar'])
-                                                                <img class="rounded-circle" style="height: 40px;" src="{{$user['avatar']}}" onerror='this.onerror=null;this.src="{{ asset("storage/avatar/photo.png") }}"'> 
+                                                                <img class="rounded-circle" style="height: 40px;" src="{{$user['avatar']}}" onerror='this.onerror=null;this.src="{{ asset("avatar/photo.png") }}"'> 
                                                             @else                 
                                                                 <div id="profileImage">{{$user['name'][0]}}</div>
                                                             @endif
@@ -127,8 +127,8 @@
                 </div>
         </div>
     </div>
-    <script type="text/javascript" src=" {{ asset('storage/js/main.js') }} "></script>
-    <script type="text/javascript" src=" {{ asset('storage/js/echarts.min.js') }} "></script>
+    <script type="text/javascript" src=" {{ asset('js/main.js') }} "></script>
+    <script type="text/javascript" src=" {{ asset('js/echarts.min.js') }} "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </body>
 

@@ -33,12 +33,12 @@ In future also can be build additional views of users and event stats.
 ## Bonus Items
 
 * Implemented the ability for the user to sort the cards by 
-*1. Sort By Name ASC
-*2. Sort By Impression ASC
-*3. Sort By Conversion ASC
-*4. Sort By Revenue ASC
+1. Sort By Name ASC
+2. Sort By Impression ASC
+3. Sort By Conversion ASC
+4. Sort By Revenue ASC
 
 * Write unit tests for testable portions of your code
-*1. User with no avatar `*Bailey G. Brazenor*` displayed the first letter of his first name in place of an image.
-*2. User with avatar in case of S3 permession display default avatar from storage.
+1. User with no avatar `*Bailey G. Brazenor*` displayed the first letter of his first name in place of an image.
+2. User with avatar in case of S3 permession display default avatar from storage.
 

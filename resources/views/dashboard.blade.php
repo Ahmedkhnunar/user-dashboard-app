@@ -56,7 +56,33 @@
                         </span>
                     </button>
                 </span>
-            </div>    <div class="app-header__content">
+            </div>    
+            <div class="app-header__content">
+                <div class="app-header-left">
+                    <ul class="header-menu nav">
+                        <li class="nav-item">
+                            <a href="?sortby=name" class="nav-link">
+                                Sort By Name
+                            </a>
+                        </li>
+                        <li class="btn-group nav-item">
+                            <a href="?sortby=impression" class="nav-link">
+                                Sort By Impression
+                            </a>
+                        </li>
+
+                        <li class="btn-group nav-item">
+                            <a href="?sortby=conversion" class="nav-link">
+                                Sort By Conversion
+                            </a>
+                        </li>
+                        <li class="btn-group nav-item">
+                            <a href="?sortby=revenue" class="nav-link">
+                                Sort By Revenue
+                            </a>
+                        </li>
+                    </ul> 
+                </div>
                 <div class="app-header-right">
                     <div class="search-wrapper active">
                         <div class="input-holder">

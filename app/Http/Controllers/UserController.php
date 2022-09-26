@@ -1,14 +1,21 @@
 <?php
-
 namespace App\Http\Controllers;
+ini_set('memory_limit', '2048M');
 
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index()
+    private $aSortBy = [];
+    function __construct()
     {
-        $users = $this->getUserLogs();
+        $this->aSortBy = ['name', 'impression', 'conversion', 'revenue'];
+    }
+
+    public function index(Request $request)
+    {
+        $sortBy = ($request->sortby) ? $request->sortby : false;
+        $users = $this->getUserLogs($sortBy);
         return view('dashboard',compact('users'));
     }
 
@@ -16,7 +23,7 @@ class UserController extends Controller
         return $users = $this->getUserLogs();
     }
 
-    public function getUserLogs()
+    public function getUserLogs($sortBy = false)
     {
         $users = json_decode(file_get_contents(storage_path() . "/users.json"), true);
         $logs = json_decode(file_get_contents(storage_path() . "/logs.json"), true);
@@ -39,6 +46,10 @@ class UserController extends Controller
             $users[$key]['timelogs']=array_column($userLogs, 'time');
 
             $users[$key]['duration'] = date('n/d',strtotime($users[$key]['timelogs'][0])) ." - ". date('n/d',strtotime(end($users[$key]['timelogs'])));
+        }
+
+        if ( $sortBy && (in_array($sortBy, $this->aSortBy)) ) {
+            usort($users, function($a, $b) use ($sortBy) { return ($sortBy == 'name') ? $a[$sortBy] > $b[$sortBy] : $a[$sortBy] < $b[$sortBy]; });
         }
 
         return $users;

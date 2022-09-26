@@ -14,9 +14,4 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
-
-
-Route::resource('dashboard', userController::class);
+Route::resource('/', userController::class);
